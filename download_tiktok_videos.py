@@ -61,7 +61,7 @@ def process_file(file_name):
                 except ValueError:
                     print(f"Skipping invalid date format: {date_line}")
         
-        # Debug: Check if video data is correctly loaded and sorted
+        # Report how many videos were loaded
         if not video_data:
             print("No video URLs to process!")
         else:
