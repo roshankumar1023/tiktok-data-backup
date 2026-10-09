@@ -6,6 +6,7 @@ Created on Fri Jan 17 18:03:10 2025
 @author: roshankumar
 """
 
+import argparse
 import os
 from yt_dlp import YoutubeDL
 from datetime import datetime
@@ -89,4 +90,8 @@ def process_file(file_name):
         print(f"An error occurred: {e}")
 
 # Run the script
-process_file(file_name)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Download TikTok videos from a data export file.")
+    parser.add_argument("file", nargs="?", default="Favorite Videos.txt", help="TikTok export file with Date/Link pairs")
+    args = parser.parse_args()
+    process_file(args.file)
