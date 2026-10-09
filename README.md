@@ -38,6 +38,10 @@ Running the script once per export file (favorites, likes, etc.) gives a separat
    ```bash
    python download_tiktok_videos.py
    ```
+   To use a different export file, pass it as an argument:
+   ```bash
+   python download_tiktok_videos.py "Liked Videos.txt"
+   ```
 5. Videos are saved to `Downloaded_Videos/`. Check `skipped_links.txt` for anything that failed.
 
 ## Results
@@ -46,14 +50,22 @@ Running the script once per export file (favorites, likes, etc.) gives a separat
 - Handled deleted and private videos without stopping the run, and logged them for review
 - Used the same script for 4 paying clients
 
+## 2026 updates
+
+I made three small fixes when I uploaded this project to GitHub in 2026:
+
+- Blank lines in the export file no longer break the Date/Link pairing.
+- Videos that were already downloaded are skipped, so an interrupted run can pick up where it stopped.
+- The export file can be passed as a command-line argument (it still defaults to `Favorite Videos.txt`).
+
 ## What I'd do differently now
 
 - **Better organization:** separate folders per category and more descriptive filenames (creator name, caption) instead of only date + video ID.
-- **Command-line arguments:** take the input file and output folder as arguments instead of hardcoded values, so one run can handle every export file.
 - **Rate limiting and retries:** add delays and automatic retries for temporary failures.
-- **Resume support:** skip videos that are already downloaded so an interrupted run can pick up where it stopped.
 - **A front end:** I originally considered turning this into a simple web app so non-technical users could upload their export and get their videos back.
 
 ## Note
 
 This tool is for backing up content from your own TikTok data export. Respect creators' rights and TikTok's Terms of Service.
+
+© 2025 Roshan Kumar. All rights reserved. This code is shared for portfolio viewing only; no permission is granted to copy, modify, or distribute it.
