@@ -28,6 +28,7 @@ def download_video(video_url, output_folder, date):
             'outtmpl': os.path.join(output_folder, f'{formatted_date}_%(id)s.%(ext)s'),  # Save videos with date in filename
             'format': 'bestvideo+bestaudio/best',  # Get the best quality available
             'quiet': False,  # Show detailed logs
+            'download_archive': os.path.join(output_folder, 'downloaded_ids.txt'),
             'noplaylist': True  # Do not process playlists
         }
         with YoutubeDL(ydl_opts) as ydl:
