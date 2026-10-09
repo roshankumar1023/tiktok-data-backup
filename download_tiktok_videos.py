@@ -45,9 +45,9 @@ def process_file(file_name):
 
     try:
         with open(file_name, "r") as file:
-            lines = file.readlines()
+            lines = [line.strip() for line in file if line.strip()]
         
-        for i in range(0, len(lines), 2):  # Read pairs of Date and Link
+        for i in range(0, len(lines) - 1, 2):  # Read pairs of Date and Link
             date_line = lines[i].strip()
             link_line = lines[i + 1].strip()
 
