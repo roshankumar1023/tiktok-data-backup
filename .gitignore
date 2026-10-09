@@ -1,0 +1,11 @@
+# Downloaded videos and logs
+Downloaded_Videos/
+skipped_links.txt
+
+# Personal TikTok data export - never commit
+*.txt
+!requirements.txt
+
+__pycache__/
+.DS_Store
+.vscode/
